@@ -2,7 +2,7 @@
  * JAVA 1 Homework 7
  * 
  * @author Oksana Ilyakova
- * @version 23.11.2021
+ * @version 25.11.2021
  */
 
 class Homework7 {
@@ -86,10 +86,6 @@ class Plate {
         return "Plate: " + food;
     }
 
-
-
-
-
     void increaseFood() {
         this.food += 400;
         System.out.println("Add 400 grams of feed");
@@ -101,13 +97,9 @@ class Plate {
 
 }
 
-
-
     int getSatietyTime() {
         return satietyTime;
     }
-
-
 
     void setSatiety(int satiety) {
         this.satiety = satiety;
