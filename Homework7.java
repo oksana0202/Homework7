@@ -19,7 +19,7 @@ class Homework7 {
     }
 
         System.out.println(plate);
-        plate.add(40);
+        plate.add(50);
         System.out.println(plate);
 
     for (Cat cat : cats) {
@@ -54,17 +54,15 @@ class Cat {
 
     @Override
     public String toString() {
-        return "name: " + name + ", appetite: " + appetite + ", fullnes: " + fullnes;
+        return "name= "( + name + ", appetite= " + appetite + ", fullnes= " + fullnes)";
     }
 }
 
 class Plate {
     protected int food;
-    protected int volume;
 
-    Plate(int food, int volume) {
+    Plate(int food) {
         this.food = food;
-        this.volume = volume;
     }
 
     boolean decreaseFood(int portion) {
@@ -76,44 +74,12 @@ class Plate {
     }
 
     void add(int food) {
-        if (this.food + food <= volume) {
-            this.food += food;
+        if (this.food += food) {
         }
     }
 
     @Override
     public String toString() {
-        return "Plate: " + food;
+        return "plate: " + food;
     }
-
-    void increaseFood() {
-        this.food += 400;
-        System.out.println("Add 400 grams of feed");
-    }
-
-    boolean checkFood(int n) {
-        return (food - n) >= 0;
-    }
-
 }
-
-    int getSatietyTime() {
-        return satietyTime;
-    }
-
-    void setSatiety(int satiety) {
-        this.satiety = satiety;
-    }
-
-    Cat(String name, int appetite, int satietyTime) {
-
-        this.name = name;
-        this.appetite = appetite;
-        this.satietyTime = satietyTime;
-        this.satiety = 0;
-    }
-
-    void eat(Plate p) {
-            p.decreaseFood(appetite);
-            satiety += satietyTime;
-    }
