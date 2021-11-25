@@ -8,9 +8,9 @@
 class Homework7 {
     public static void main(String[] args) {
         Cat[] cats = {
-            new Cat("Tima", 150), new Cat("Busya", 100), new Cat("Sima", 50)
+            new Cat("Tima", 15), new Cat("Busya", 10), new Cat("Sima", 20)
         };
-        Plate plate = new Plate(300,40);
+        Plate plate = new Plate(50,30);
         System.out.println(plate);
 
     for (Cat cat : cats) {
@@ -19,7 +19,7 @@ class Homework7 {
     }
 
         System.out.println(plate);
-        plate.add(50);
+        plate.add(40);
         System.out.println(plate);
 
     for (Cat cat : cats) {
@@ -54,7 +54,7 @@ class Cat {
 
     @Override
     public String toString() {
-        return "name= "( + name + ", appetite= " + appetite + ", fullnes= " + fullnes)";
+        return "(name= " + name + ", appetite= " + appetite + ", fullnes= " + fullnes + ")";
     }
 }
 
