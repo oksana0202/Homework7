@@ -10,7 +10,7 @@ class Homework7 {
         Cat[] cats = {
             new Cat("Tima", 150), new Cat("Busya", 100), new Cat("Sima", 50)
         };
-        Plate plate = new Plate(300);
+        Plate plate = new Plate(300, 80);
         System.out.println(plate);
 
     for (Cat cat : cats) {
