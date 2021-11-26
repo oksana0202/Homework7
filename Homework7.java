@@ -13,19 +13,19 @@ class Homework7 {
         Plate plate = new Plate(300, 80);
         System.out.println(plate);
 
-    for (Cat cat : cats) {
-        cat.eat(plate);
-        System.out.println(cat);
-    }
+        for (Cat cat : cats) {
+            cat.eat(plate);
+            System.out.println(cat);
+        }
 
         System.out.println(plate);
-        plate.add(40);
+        plate.add(50);
         System.out.println(plate);
 
-    for (Cat cat : cats) {
-        cat.setFullness(false);
-        cat.eat(plate);
-        System.out.println(cat);
+        for (Cat cat : cats) {
+            cat.setFullness(false);
+            cat.eat(plate);
+            System.out.println(cat);
         }
         System.out.println(plate);
     }
@@ -36,7 +36,7 @@ class Cat {
     protected int appetite;
     protected boolean fullnes;
 
-    Cat( name,  appetite) {
+    Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
         fullnes = false;
@@ -47,14 +47,14 @@ class Cat {
     }
 
     void eat(Plate plate) {
-        if(!fullnes) {
+        if (!fullnes) {
             fullnes = plate.decreaseFood(appetite);
         }
     }
 
     @Override
     public String toString() {
-        return "(name= " + name + ", appetite= " + appetite + ", fullnes= " + fullnes + ")";
+        return "{name= " + name + ", appetite= " + appetite + ", fullnes= " + fullnes + "}";
     }
 }
 
@@ -66,22 +66,21 @@ class Plate {
     }
 
     boolean decreaseFood( int portion) {
-        if(food < portion) {
+        if (food < portion) {
             return false;
         }
         food -= portion;
         return true;
     }
 
-     void add( int food) {
-        if (this.food + food <= volume) {
-            this.food += food;
+     void add(int food) {
+        if (this.food += food) {
         }
     }
 
     @Override
     public String toString() {
-        return "Plate: " + food;
+        return "plate: " + food;
     }
 }
 
