@@ -2,7 +2,7 @@
  * JAVA 1 Homework 7
  * 
  * @author Oksana Ilyakova
- * @version 26.11.2021
+ * @version 23.11.2021
  */
 
 class Homework7 {
@@ -10,7 +10,7 @@ class Homework7 {
         Cat[] cats = {
             new Cat("Tima", 150), new Cat("Busya", 100), new Cat("Sima", 50)
         };
-        Plate plate = new Plate(300, 80);
+        Plate plate = new Plate(300,40);
         System.out.println(plate);
 
         for (Cat cat : cats) {
@@ -23,7 +23,7 @@ class Homework7 {
         System.out.println(plate);
 
         for (Cat cat : cats) {
-            cat.setFullness(false);
+            cat.setSated(false);
             cat.eat(plate);
             System.out.println(cat);
         }
@@ -34,53 +34,55 @@ class Homework7 {
 class Cat {
     protected String name;
     protected int appetite;
-    protected boolean fullnes;
+    protected boolean sated;
 
     Cat(String name, int appetite) {
         this.name = name;
         this.appetite = appetite;
-        fullnes = false;
+        sated = false;
     }
 
-    void setFullness(boolean status) {
- fullnes = status;
+    void setSated(boolean status) {
+        sated = status;
     }
 
     void eat(Plate plate) {
-        if (!fullnes) {
-            fullnes = plate.decreaseFood(appetite);
+        if(!sated) {
+            sated = plate.decreaseFood(appetite);
         }
     }
 
     @Override
     public String toString() {
-        return "{name= " + name + ", appetite= " + appetite + ", fullnes= " + fullnes + "}";
+        return "{name= " + name + ", appetite= " + appetite + ", sated= " + sated + "}";
     }
 }
 
 class Plate {
     protected int food;
+    protected int volume;
 
-    Plate(int food) {
+    Plate(int food, int volume) {
         this.food = food;
+        this.volume = volume;
     }
 
-    boolean decreaseFood( int portion) {
-        if (food < portion) {
+    boolean decreaseFood(int portion) {
+        if(food < portion) {
             return false;
         }
         food -= portion;
         return true;
     }
 
-     void add(int food) {
-        if (this.food += food) {
+    void add(int food) {
+        if (this.food + food <= volume) {
+            this.food += food;
         }
     }
 
     @Override
     public String toString() {
-        return "plate: " + food;
+        return "Plate: " + food;
     }
 }
-
