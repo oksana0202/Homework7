@@ -2,7 +2,7 @@
  * JAVA 1 Homework 7
  * 
  * @author Oksana Ilyakova
- * @version 26.11.2021
+ * @version 23.11.2021
  */
 
 class Homework7 {
